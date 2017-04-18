@@ -153,6 +153,7 @@ public class DevToolsPlugin extends Plugin
 	private DevToolsButton shell;
 	private DevToolsButton menus;
 	private NavigationButton navButton;
+	private DevToolsButton eventInspector;
 
 	@Provides
 	DevToolsConfig provideConfig(ConfigManager configManager)
@@ -201,6 +202,7 @@ public class DevToolsPlugin extends Plugin
 		roofs = new DevToolsButton("Roofs");
 		shell = new DevToolsButton("Shell");
 		menus = new DevToolsButton("Menus");
+		eventInspector = new DevToolsButton("Event Inspector");
 
 		overlayManager.add(overlay);
 		overlayManager.add(locationOverlay);

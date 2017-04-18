@@ -200,4 +200,6 @@ public interface Projectile extends Renderable, Identifiable
 	 * @return
 	 */
 	int getAnimationFrame();
+
+	int getRsInteracting();
 }

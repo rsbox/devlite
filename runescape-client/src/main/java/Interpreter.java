@@ -221,8 +221,8 @@ public class Interpreter {
 						}
 
 						var5.field1236 = var19;
-						var5.field1206 = var12;
-						var5.field1174 = var5 != class229.localPlayer && var11.isUser && !Client.field694.isEmpty() && var16.toLowerCase().indexOf(Client.field694) == -1;
+						var5.isAutoChatting = var12;
+						var5.showPublicPlayerChat = var5 != class229.localPlayer && var11.isUser && !Client.field694.isEmpty() && var16.toLowerCase().indexOf(Client.field694) == -1;
 						int var26;
 						if (var11.isPrivileged) {
 							var26 = var12 ? 91 : 1;
@@ -263,7 +263,7 @@ public class Interpreter {
 					GrandExchangeOfferUnitPriceComparator.addGameMessage(2, var5.username.getName(), var5.overheadText);
 				}
 
-				var5.field1206 = false;
+				var5.isAutoChatting = false;
 				var5.field1196 = 0;
 				var5.field1197 = 0;
 				var5.overheadTextCyclesRemaining = 150;
@@ -361,8 +361,8 @@ public class Interpreter {
 						var5.field1197 = var23 & 255;
 						var5.overheadTextCyclesRemaining = 150;
 						var5.field1236 = null;
-						var5.field1206 = var35;
-						var5.field1174 = var5 != class229.localPlayer && var36.isUser && !Client.field694.isEmpty() && var29.toLowerCase().indexOf(Client.field694) == -1;
+						var5.isAutoChatting = var35;
+						var5.showPublicPlayerChat = var5 != class229.localPlayer && var36.isUser && !Client.field694.isEmpty() && var29.toLowerCase().indexOf(Client.field694) == -1;
 						if (var36.isPrivileged) {
 							var34 = var35 ? 91 : 1;
 						} else {

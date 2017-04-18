@@ -61,6 +61,8 @@ class DevToolsPanel extends PluginPanel
 	private final InfoBoxManager infoBoxManager;
 	private final ScheduledExecutorService scheduledExecutorService;
 
+	private final EventInspector eventInspector;
+
 	@Inject
 	private DevToolsPanel(
 		Client client,
@@ -70,6 +72,7 @@ class DevToolsPanel extends PluginPanel
 		VarInspector varInspector,
 		ScriptInspector scriptInspector,
 		InventoryInspector inventoryInspector,
+		EventInspector eventInspector,
 		Notifier notifier,
 		InfoBoxManager infoBoxManager,
 		ScheduledExecutorService scheduledExecutorService)
@@ -81,6 +84,7 @@ class DevToolsPanel extends PluginPanel
 		this.widgetInspector = widgetInspector;
 		this.varInspector = varInspector;
 		this.inventoryInspector = inventoryInspector;
+		this.eventInspector = eventInspector;
 		this.scriptInspector = scriptInspector;
 		this.notifier = notifier;
 		this.infoBoxManager = infoBoxManager;
@@ -142,6 +146,9 @@ class DevToolsPanel extends PluginPanel
 		plugin.getVarInspector().addFrame(varInspector);
 
 		container.add(plugin.getSoundEffects());
+
+		container.add(plugin.getEventInspector());
+		plugin.getEventInspector().addFrame(eventInspector);
 
 		final JButton notificationBtn = new JButton("Notification");
 		notificationBtn.addActionListener(e ->

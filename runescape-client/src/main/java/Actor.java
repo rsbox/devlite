@@ -140,9 +140,9 @@ public abstract class Actor extends Renderable {
 	@Export("overheadText")
 	String overheadText;
 	@ObfuscatedName("cf")
-	boolean field1206;
+	boolean isAutoChatting;
 	@ObfuscatedName("cg")
-	boolean field1174;
+	boolean showPublicPlayerChat;
 	@ObfuscatedName("cv")
 	@ObfuscatedGetter(
 		intValue = 2129131609
@@ -262,7 +262,7 @@ public abstract class Actor extends Renderable {
 	@ObfuscatedGetter(
 		intValue = 2089660561
 	)
-	int field1199;
+	int currentSequenceFrameIndex;
 	@ObfuscatedName("dd")
 	@ObfuscatedSignature(
 		descriptor = "Ltz;"
@@ -410,7 +410,7 @@ public abstract class Actor extends Renderable {
 		this.field1190 = -1;
 		this.field1239 = -1;
 		this.overheadText = null;
-		this.field1174 = false;
+		this.showPublicPlayerChat = false;
 		this.overheadTextCyclesRemaining = 100;
 		this.field1196 = 0;
 		this.field1197 = 0;
@@ -435,7 +435,7 @@ public abstract class Actor extends Renderable {
 		this.sequenceFrame = 0;
 		this.sequenceFrameCycle = 0;
 		this.sequenceDelay = 0;
-		this.field1199 = 0;
+		this.currentSequenceFrameIndex = 0;
 		this.spotAnimations = new IterableNodeHashTable(4);
 		this.graphicsCount = 0;
 		this.npcCycle = 0;

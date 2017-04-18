@@ -107,18 +107,18 @@ public class WorldMapLabelSize {
 				var0.sequenceFrame = 0;
 				var0.sequenceFrameCycle = 0;
 				var0.sequenceDelay = var2;
-				var0.field1199 = 0;
+				var0.currentSequenceFrameIndex = 0;
 			}
 
 			if (var3 == 2) {
-				var0.field1199 = 0;
+				var0.currentSequenceFrameIndex = 0;
 			}
 		} else if (var1 == -1 || var0.sequence == -1 || DynamicObject.SequenceDefinition_get(var1).field2223 >= DynamicObject.SequenceDefinition_get(var0.sequence).field2223) {
 			var0.sequence = var1;
 			var0.sequenceFrame = 0;
 			var0.sequenceFrameCycle = 0;
 			var0.sequenceDelay = var2;
-			var0.field1199 = 0;
+			var0.currentSequenceFrameIndex = 0;
 			var0.field1220 = var0.pathLength;
 		}
 

@@ -120,4 +120,6 @@ public interface Player extends Actor
 	{
 		return getAnimation() != -1;
 	}
+
+	boolean getIsHidden();
 }

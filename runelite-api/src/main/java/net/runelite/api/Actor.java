@@ -521,4 +521,31 @@ public interface Actor extends Renderable, SceneEntity
 	{
 		return getAnimation() != -1;
 	}
+
+	int getGraphicStartCycle();
+
+	int getAnimationFrameIndex();
+
+	int getAnimationDelay();
+
+	int getFacedDirection();
+
+	boolean instantTurn();
+
+	int exactMoveDeltaX1();
+	int exactMoveDeltaX2();
+	int exactMoveDeltaY1();
+	int exactMoveDeltaY2();
+	int exactMoveArrive1Cycle();
+	int exactMoveArrive2Cycle();
+	int exactMoveDirection();
+
+	int recolourStartCycle();
+	int recolourEndCycle();
+	byte recolourHue();
+	byte recolourSaturation();
+	byte recolourLuminance();
+	byte recolourAmount();
+
+	int getCombatLevelOverride();
 }

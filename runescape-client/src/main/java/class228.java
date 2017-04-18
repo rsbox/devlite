@@ -260,8 +260,8 @@ public enum class228 implements MouseWheel {
 
 				if (var0.sequenceFrame >= var3.frameIds.length) {
 					var0.sequenceFrame -= var3.frameCount;
-					++var0.field1199;
-					if (var0.field1199 >= var3.field2211) {
+					++var0.currentSequenceFrameIndex;
+					if (var0.currentSequenceFrameIndex >= var3.field2211) {
 						var0.sequence = -1;
 					} else if (var0.sequenceFrame >= 0 && var0.sequenceFrame < var3.frameIds.length) {
 						DynamicObject.method2244(var3, var0.sequenceFrame, var0.x, var0.y, var0);
@@ -278,8 +278,8 @@ public enum class228 implements MouseWheel {
 					FriendLoginUpdate.method8127(var3, var0.sequenceFrame, var0.x, var0.y, var0);
 				} else {
 					var0.sequenceFrame -= var3.frameCount;
-					++var0.field1199;
-					if (var0.field1199 >= var3.field2211) {
+					++var0.currentSequenceFrameIndex;
+					if (var0.currentSequenceFrameIndex >= var3.field2211) {
 						var0.sequence = -1;
 					} else if (var0.sequenceFrame >= 0 && var0.sequenceFrame < var4) {
 						FriendLoginUpdate.method8127(var3, var0.sequenceFrame, var0.x, var0.y, var0);

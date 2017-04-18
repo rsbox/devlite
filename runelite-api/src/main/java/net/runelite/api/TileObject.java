@@ -24,6 +24,7 @@
  */
 package net.runelite.api;
 
+import net.runelite.api.coords.Angle;
 import net.runelite.api.coords.LocalPoint;
 import net.unethicalite.api.SceneEntity;
 
@@ -145,4 +146,20 @@ public interface TileObject extends SceneEntity
 	void setTransformedComposition(ObjectComposition composition);
 
 	int getActualId();
+
+	int getFlags();
+
+	int getModelOrientation();
+
+	Angle getTileObjectAngle();
+
+	/**
+	 * A bitfield containing various flags:
+	 * <pre>{@code
+	 * object type id = bits & 0x20
+	 * orientation (0-3) = bits >>> 6 & 3
+	 * supports items = bits >>> 8 & 1
+	 * }</pre>
+	 */
+	int getConfig();
 }

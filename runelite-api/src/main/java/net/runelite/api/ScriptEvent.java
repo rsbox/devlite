@@ -104,4 +104,7 @@ public interface ScriptEvent
 	 * This method must be ran on the client thread and is not reentrant
 	 */
 	void run();
+
+	int type();
+
 }

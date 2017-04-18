@@ -44,13 +44,7 @@ import net.runelite.api.SpritePixels;
 import net.runelite.api.coords.LocalPoint;
 import net.runelite.api.coords.WorldArea;
 import net.runelite.api.coords.WorldPoint;
-import net.runelite.api.events.ActorDeath;
-import net.runelite.api.events.AnimationChanged;
-import net.runelite.api.events.GraphicChanged;
-import net.runelite.api.events.HealthBarUpdated;
-import net.runelite.api.events.HitsplatApplied;
-import net.runelite.api.events.InteractingChanged;
-import net.runelite.api.events.OverheadTextChanged;
+import net.runelite.api.events.*;
 import net.runelite.api.mixins.FieldHook;
 import net.runelite.api.mixins.Inject;
 import net.runelite.api.mixins.MethodHook;
@@ -595,4 +589,63 @@ public abstract class RSActorMixin implements RSActor
 				return animation;
 		}
 	}
+
+	//@FieldHook("currentSequenceFrameIndex")
+	@Inject
+	public void animationFrameIndexChanged(int idx)
+	{
+		AnimationFrameIndexChanged animationChange = new AnimationFrameIndexChanged();
+		animationChange.setActor(this);
+		client.getCallbacks().post(animationChange);
+	}
+
+	//@FieldHook("spotAnimationStartCycle")
+	@Inject
+	public void spotAnimationChanged(int idx)
+	{
+		GraphicChanged graphicChanged = new GraphicChanged();
+		graphicChanged.setActor(this);
+		client.getCallbacks().post(graphicChanged);
+	}
+
+	//@FieldHook("facedDirection")
+	@Inject
+	public void facedDirectionChanged(int idx)
+	{
+		FacedDirectionChanged facedDirectionChanged = new FacedDirectionChanged(this, getFacedDirection(), instantTurn());
+		client.getCallbacks().post(facedDirectionChanged);
+	}
+
+	//@FieldHook("exactMoveDirection")
+	@Inject
+	public void exactMoveReceived(int idx)
+	{
+		ExactMoveEvent exactMoveEvent = new ExactMoveEvent(this, exactMoveDeltaX1(), exactMoveDeltaX2(), exactMoveDeltaY1(), exactMoveDeltaY2(),
+				exactMoveArrive1Cycle(), exactMoveArrive2Cycle(), exactMoveDirection(), client.getGameCycle());
+		client.getCallbacks().post(exactMoveEvent);
+	}
+
+	//@FieldHook("recolourAmount")
+	@Inject
+	public void recolourReceived(int idx) {
+		RecolourEvent event = new RecolourEvent(this, recolourStartCycle(), recolourEndCycle(), recolourHue(), recolourSaturation(), recolourLuminance(),
+				recolourAmount(), client.getGameCycle());
+		client.getCallbacks().post(event);
+	}
+
+
+	//@FieldHook("combatLevelChange")
+	@Inject
+	public void combatLevelChange(int idx) {
+		if (getCombatLevelOverride() == -1) return;
+		CombatLevelChangeEvent event = new CombatLevelChangeEvent(this, getCombatLevel(), getCombatLevelOverride());
+		client.getCallbacks().post(event);
+	}
+
+	//@FieldHook("showPublicPlayerChat")
+	@Inject
+	public void showPublicPlayerChatChanged(int idx) {
+		client.getCallbacks().post(new ShowPublicPlayerChatChanged());
+	}
+
 }

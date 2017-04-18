@@ -3925,7 +3925,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 						}
 
 						if (var59 == null) {
-							var59 = UserComparator8.openInterface(var7, var8, var9);
+							var59 = UserComparator8.ifOpenSub(var7, var8, var9);
 						}
 					}
 
@@ -4303,7 +4303,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 						class302.closeInterface(var75, var21 != var75.group);
 					}
 
-					UserComparator8.openInterface(var5, var21, var6);
+					UserComparator8.ifOpenSub(var5, var21, var6);
 					var1.serverPacket = null;
 					return true;
 				}
@@ -4754,16 +4754,16 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 								var77.sequenceFrame = 0;
 								var77.sequenceFrameCycle = 0;
 								var77.sequenceDelay = var6;
-								var77.field1199 = 0;
+								var77.currentSequenceFrameIndex = 0;
 							} else if (var8 == 2) {
-								var77.field1199 = 0;
+								var77.currentSequenceFrameIndex = 0;
 							}
 						} else if (var5 == -1 || var77.sequence == -1 || DynamicObject.SequenceDefinition_get(var5).field2223 >= DynamicObject.SequenceDefinition_get(var77.sequence).field2223) {
 							var77.sequence = var5;
 							var77.sequenceFrame = 0;
 							var77.sequenceFrameCycle = 0;
 							var77.sequenceDelay = var6;
-							var77.field1199 = 0;
+							var77.currentSequenceFrameIndex = 0;
 							var77.field1220 = var77.pathLength;
 						}
 					}

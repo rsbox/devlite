@@ -48,4 +48,9 @@ public interface DevToolsConfig extends Config
 		description = ""
 	)
 	void inspectorAlwaysOnTop(boolean value);
+
+	@ConfigItem(keyName = "eventInspectorActive", name = "Event Inspector", description = "")
+	default boolean inspectorActive() {
+		return true;
+	}
 }

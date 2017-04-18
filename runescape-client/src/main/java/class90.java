@@ -328,18 +328,18 @@ public enum class90 implements MouseWheel {
 						var14.sequenceFrame = 0;
 						var14.sequenceFrameCycle = 0;
 						var14.sequenceDelay = var19;
-						var14.field1199 = 0;
+						var14.currentSequenceFrameIndex = 0;
 					}
 
 					if (var8 == 2) {
-						var14.field1199 = 0;
+						var14.currentSequenceFrameIndex = 0;
 					}
 				} else if (var6 == -1 || var14.sequence == -1 || DynamicObject.SequenceDefinition_get(var6).field2223 >= DynamicObject.SequenceDefinition_get(var14.sequence).field2223) {
 					var14.sequence = var6;
 					var14.sequenceFrame = 0;
 					var14.sequenceFrameCycle = 0;
 					var14.sequenceDelay = var19;
-					var14.field1199 = 0;
+					var14.currentSequenceFrameIndex = 0;
 					var14.field1220 = var14.pathLength;
 				}
 			}

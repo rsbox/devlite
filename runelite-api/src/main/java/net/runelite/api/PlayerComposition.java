@@ -103,4 +103,7 @@ public interface PlayerComposition
 	ColorTextureOverride[] getColorTextureOverrides();
 
 	long getHash();
+
+	int getTransformedNpcId();
+	PlayerEquipmentItem[] getPlayerEquipmentItems();
 }
