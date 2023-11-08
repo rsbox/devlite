@@ -125,6 +125,7 @@ tasks {
 
         classpath = project.sourceSets.main.get().runtimeClasspath
         mainClass.set("net.runelite.deob.clientver.ClientVersionMain")
+        args = listOf("${System.getProperty("user.home")}/gamepack/gamepack.jar")
     }
 }
 

@@ -1,0 +1,3 @@
+[submodule "injector"]
+	path = injector
+	url = https://github.com/jbx5/devious-injector

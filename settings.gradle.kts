@@ -47,6 +47,7 @@ include(":runelite-mixins")
 include(":runescape-api")
 include(":runescape-client")
 include(":wiki-scraper")
+includeBuild("injector")
 
 for (project in rootProject.children) {
     project.apply {

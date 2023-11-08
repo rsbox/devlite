@@ -25,7 +25,9 @@
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import org.slf4j.Logger;
@@ -48,7 +50,8 @@ public class ConfigLoader
 
 	public void fetch() throws IOException
 	{
-		try (BufferedReader in = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream(CONFIG_RESOURCE))))
+		InputStream stream = new URL("http://oldschool1.runescape.com/jav_config.ws").openConnection().getInputStream();
+		try (BufferedReader in = new BufferedReader(new InputStreamReader(stream)))
 		{
 			String str;
 
@@ -87,6 +90,7 @@ public class ConfigLoader
 				}
 			}
 		}
+		stream.close();
 	}
 
 	public String getProperty(String name)
