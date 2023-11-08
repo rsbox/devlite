@@ -283,7 +283,7 @@ public class ParamComposition extends DualNode {
 					var21 = 16711680;
 					var20 = var17.isMembersOnly() ? class108.field1377 : class108.field1382;
 				} else if (var17.method1858()) {
-					var20 = var17.isMembersOnly() ? class108.field1372 : class108.field1378;
+					var20 = var17.isMembersOnly() ? class108.field1390 : class108.field1378;
 				} else if (var17.isPvp()) {
 					var20 = var17.isMembersOnly() ? class108.field1373 : class108.field1370;
 				} else if (var17.method1859()) {

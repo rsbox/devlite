@@ -5,7 +5,7 @@ import net.runelite.mapping.Import;
 
 public interface RSServerPacket extends ServerPacket
 {
-	@Import("id")
+	/*@Import("id")
 	@Override
 	int getId();
 
@@ -194,5 +194,5 @@ public interface RSServerPacket extends ServerPacket
 	RSServerPacket DYNAMICOBJECT_SPAWN();
 
 	@Import("SET_PRIVCHATMODE")
-	RSServerPacket SET_PRIVCHATMODE();
+	RSServerPacket SET_PRIVCHATMODE();*/
 }

@@ -59,8 +59,7 @@ public class PacketWriter {
 	@Export("serverPacketLength")
 	int serverPacketLength;
 	@ObfuscatedName("al")
-	@Export("field1390")
-	boolean field1390;
+	boolean fielda;
 	@ObfuscatedName("az")
 	@ObfuscatedGetter(
 		intValue = 1263938853
@@ -95,7 +94,7 @@ public class PacketWriter {
 		this.packetBuffer = new PacketBuffer(40000);
 		this.serverPacket = null;
 		this.serverPacketLength = 0;
-		this.field1390 = true;
+		this.fielda = true;
 		this.field1412 = 0;
 		this.pendingWrites = 0;
 	}
